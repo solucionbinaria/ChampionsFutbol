@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Formulario de inscripción</title>
+    </h:head>
+    <h:body>
+        <p:accordionPanel multiple="true">  
+            <p:tab title="Datos Generales">  
+                <p:panelGrid columns="8">  
+
+                    <p:outputLabel for="docum_identidad" 
+                                   value="Docuemnto de Identidad"></p:outputLabel>
+                    <p:inputText required="true" converter="#{Integer}"
+                                 id="docum_identidad" type="text" value="">
+                    </p:inputText>
+                    <p:outputLabel for="fecha_exp" value="Fecha de Exp"></p:outputLabel>
+                    <p:calendar value="" pattern="dd/MM/yyyy"  required="true"
+                                id="fecha_exp" showOn="button" converter="#{DateTime}" >
+                    </p:calendar>
+                    <p:outputLabel for="nombres" value="Nombres"></p:outputLabel>
+                    <p:inputText id="nombres" type="text" value="" required="true" />
+                    <p:outputLabel for="apellidos" value="Apellidos"></p:outputLabel>
+                    <p:inputText id="apellidos" type="text" required="true" value="" />
+
+
+                    <p:outputLabel for="fecha_nac" value="Fecha de Nacimiento"></p:outputLabel>
+                    <p:calendar value="" pattern="dd/MM/yyyy"  required="true"
+                                id="fecha_nac" showOn="button" converter="#{DateTime}" >
+                    </p:calendar>
+                    <p:outputLabel for="lugar_nac" value="Lugar de Nacimiento"></p:outputLabel>
+                    <p:selectOneMenu value="#{buttonBean.number}">  
+                        <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
+                        <f:selectItem itemLabel="CALI" itemValue="CALI" />  
+                        <f:selectItem itemLabel="BOGOTA" itemValue="BOGOTA" />  
+                    </p:selectOneMenu>
+                    <p:outputLabel for="seg_social" value="Seguridad Social"></p:outputLabel>
+                    <p:inputText id="seg_social" required="true" type="text" value="" />
+                    <p:outputLabel for="rh" value="Tipo de Sangre"></p:outputLabel>
+                    <p:selectOneMenu value="" id="rh" required="true">  
+                        <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
+                        <f:selectItem itemLabel="O+" itemValue="O+" />  
+                        <f:selectItem itemLabel="O-" itemValue="O-" />  
+                        <f:selectItem itemLabel="A+" itemValue="A+" />  
+                        <f:selectItem itemLabel="A-" itemValue="A-" />  
+                        <f:selectItem itemLabel="B+" itemValue="B+" />  
+                        <f:selectItem itemLabel="B-" itemValue="B-" />  
+                        <f:selectItem itemLabel="AB+" itemValue="AB+" />  
+                        <f:selectItem itemLabel="AB-" itemValue="AB-" />  
+                    </p:selectOneMenu>
+
+
+                    <p:outputLabel for="dir_res" value="Dirección de Residencia"></p:outputLabel>
+                    <p:inputText id="dir_res" type="text" required="true" value="" />
+                    <p:outputLabel for="barrrio_res" value="Barrio de Residencia"></p:outputLabel>
+                    <p:inputText id="barrrio_res" type="text"  required="true" value="" />
+                    <p:outputLabel for="tel_fijo"  value="Dirección de Residencia"></p:outputLabel>
+                    <p:inputMask id="tel_fijo" required="true" value="" mask="999-99-99"/>  
+                    <p:outputLabel for="tel_movil" value="Telefono Cecular"></p:outputLabel>
+                    <p:inputMask id="tel_movil" required="true" value="" mask="999-9999999"/>  
+
+                    <p:outputLabel for="email" value="Correo electrónico"></p:outputLabel>
+                    <p:inputText id="email" type="text" required="true" value="">
+                        <f:validateRegex
+                            pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$">
+                        </f:validateRegex>
+                    </p:inputText>
+                    <p:outputLabel for="bb_pin" value="BB PIN"></p:outputLabel>
+                    <p:inputText id="bb_pin" required="true" type="text" value="" />
+                    <p:outputLabel for="col" value="Colegio"></p:outputLabel>
+                    <p:inputText id="col" required="true" type="text" value="" />
+                    <p:outputLabel for="grado_col" value="Grado"></p:outputLabel>
+                    <p:inputText id="grado_col" required="true" type="text" value="" />
+
+                 
+                </p:panelGrid>  
+
+
+            </p:tab>  
+            <p:tab title="Datos de la Madre">  
+
+            </p:tab>  
+            <p:tab title="Datos del Padre">  
+
+            </p:tab> 
+        </p:accordionPanel>  
+    </h:body>
+</html>
+
