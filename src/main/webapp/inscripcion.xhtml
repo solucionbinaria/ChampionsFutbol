@@ -13,7 +13,7 @@
             <h1 style="text-align: center">FORMULARIO DE INSCRIPCIÓN CHAMPIONS</h1>
             <p:accordionPanel multiple="true">  
                 <p:tab title="Datos Generales">  
-                    <h:panelGrid columns="8" style="border: none">  
+                    <h:panelGrid columns="8">  
 
                         <p:outputLabel for="docum_identidad" 
                                        value="Documento de Identidad"></p:outputLabel>
@@ -65,7 +65,7 @@
                         <p:inputText id="barrrio_res" type="text"  required="true" value="" />
                         <p:outputLabel for="tel_fijo"  value="Dirección de Residencia"></p:outputLabel>
                         <p:inputMask id="tel_fijo" required="true" value="" mask="999-99-99"/>  
-                        <p:outputLabel for="tel_movil" value="Telefono Cecular"></p:outputLabel>
+                        <p:outputLabel for="tel_movil" value="Telefono Celular"></p:outputLabel>
                         <p:inputMask id="tel_movil" required="true" value="" mask="999-999-99-99"/>  
 
                         <p:outputLabel for="email" value="Correo electrónico"></p:outputLabel>
@@ -84,11 +84,52 @@
 
 
                 </p:tab>  
-                <p:tab title="Datos de la Madre">  
+                <p:tab title="Datos Familiares">  
+                    <p:fieldset legend="Datos Madre">
+                        <h:panelGrid columns="6"> 
+                            <p:outputLabel for="nom_madre" value="Nombres"></p:outputLabel>
+                            <p:inputText id="nom_madre" required="true" type="text" value="" />
+                            <p:outputLabel for="apell_madre" value="Apellidos"></p:outputLabel>
+                            <p:inputText id="apell_madre" required="true" type="text" value="" />
+                            <p:outputLabel for="cel_madre" value="Telefono Celular"></p:outputLabel>
+                            <p:inputMask id="cel_madre" required="true" value="" mask="999-999-99-99"/>  
+                            <p:outputLabel for="email_madre" value="Correo electrónico"></p:outputLabel>
+                            <p:inputText id="email_madre"  required="true" type="text" value="">
+                                <f:validateRegex
+                                    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$">
+                                </f:validateRegex>
+                            </p:inputText>
 
-                </p:tab>  
-                <p:tab title="Datos del Padre">  
+                            <p:outputLabel for="ocup_madre" value="Ocupación"></p:outputLabel>
+                            <p:inputText id="ocup_madre" type="text" value="" />
 
+                            <p:outputLabel for="emp_madre" value="Empresa"></p:outputLabel>
+                            <p:inputText id="emp_madre" type="text" value="" />
+                        </h:panelGrid>
+                    </p:fieldset>
+
+                    <p:fieldset legend="Datos Padre">
+                        <h:panelGrid columns="6">
+                            <p:outputLabel for="nom_padre" value="Nombres"></p:outputLabel>
+                            <p:inputText id="nom_padre" required="true" type="text" value="" />
+                            <p:outputLabel for="apell_padre" value="Apellidos"></p:outputLabel>
+                            <p:inputText id="apell_padre" required="true" type="text" value="" />
+                            <p:outputLabel for="cel_padre" value="Telefono Celular"></p:outputLabel>
+                            <p:inputMask id="cel_padre" required="true" value="" mask="999-999-99-99"/>  
+                            <p:outputLabel for="email_padre" value="Correo electrónico"></p:outputLabel>
+                            <p:inputText id="email_padre"  required="true" type="text" value="">
+                                <f:validateRegex
+                                    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$">
+                                </f:validateRegex>
+                            </p:inputText>
+
+                            <p:outputLabel for="ocup_padre" value="Ocupación"></p:outputLabel>
+                            <p:inputText id="ocup_padre" type="text" value="" />
+
+                            <p:outputLabel for="emp_padre" value="Empresa"></p:outputLabel>
+                            <p:inputText id="emp_padre" type="text" value="" />
+                        </h:panelGrid>
+                    </p:fieldset>
                 </p:tab> 
             </p:accordionPanel>  
         </h:form>
