@@ -17,10 +17,12 @@
                 <p:tab title="Datos Generales">
                     <p:growl id="messages" showDetail="true"/>  
                     <center>
-                        <p:graphicImage title="Foto Estudiante" alt="Foto Estudiante" 
+                        <p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
+                                        title="Foto Estudiante" alt="Foto Estudiante" 
                                         id="foto" width="150" height="120"></p:graphicImage><br/>
-                        <p:fileUpload mode="simple" dragDropSupport="true"  
-                                      label="Seleccione la foto" auto="true"
+                        <p:fileUpload mode="advanced" dragDropSupport="false"  
+                                      fileUploadListener="#{inscripcionMB.guardarFoto}"
+                                      label="Agregar foto" auto="true"
                                       update="foto" required="false"  uploadLabel="Subir foto"
                                       cancelLabel="Cancelar"
                                       allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ></p:fileUpload>  

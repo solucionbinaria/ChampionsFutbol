@@ -17,6 +17,7 @@ public class InscripcionVO {
     private Long documentoIdentidad;
     private Date fechaExpedicionDocumento;
     private Date fechaNacimento;
+    private String rutaImagen;
 
     /**
      * @return the documentoIdentidad
@@ -60,6 +61,20 @@ public class InscripcionVO {
      */
     public void setFechaExpedicionDocumento(Date fechaExpedicionDocumento) {
         this.fechaExpedicionDocumento = fechaExpedicionDocumento;
+    }
+
+    /**
+     * @return the rutaImagen
+     */
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    /**
+     * @param rutaImagen the rutaImagen to set
+     */
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
     }
     
     
