@@ -9,12 +9,23 @@
         <title>Formulario de inscripción</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form enctype="multipart/form-data">
             <h1 style="text-align: center">FORMULARIO DE INSCRIPCIÓN CHAMPIONS</h1>
             <!--<p:messages autoUpdate="true" globalOnly="true"></p:messages>-->
             <p:growl showDetail="true"></p:growl>
             <p:accordionPanel multiple="true" activeIndex="">  
-                <p:tab title="Datos Generales">  
+                <p:tab title="Datos Generales">
+                    <p:growl id="messages" showDetail="true"/>  
+                    <center>
+                        <p:graphicImage title="Foto Estudiante" alt="Foto Estudiante" 
+                                        id="foto" width="150" height="120"></p:graphicImage><br/>
+                        <p:fileUpload mode="simple" dragDropSupport="true"  
+                                      label="Seleccione la foto" auto="true"
+                                      update="foto" required="false"  uploadLabel="Subir foto"
+                                      cancelLabel="Cancelar"
+                                      allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ></p:fileUpload>  
+                    </center>
+
                     <h:panelGrid columns="8">  
 
                         <p:outputLabel for="docum_identidad" 
