@@ -15,90 +15,91 @@
             <p:growl showDetail="true"></p:growl>
             <p:accordionPanel multiple="true" activeIndex="">  
                 <p:tab title="Datos Generales">
-                    <p:growl id="messages" autoUpdate="true" showDetail="true"/>  
-                    <center>
-                        <p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
-                                        title="Foto Estudiante" alt="Foto Estudiante" 
-                                        id="foto" width="150" height="120"></p:graphicImage><br/>
-                        <p:fileUpload mode="advanced" dragDropSupport="false"  
-                                      fileUploadListener="#{inscripcionMB.guardarFoto}"
-                                      label="Agregar foto" auto="true"
-                                      update="foto" required="false"  uploadLabel="Subir foto"
-                                      cancelLabel="Cancelar"
-                                      allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ></p:fileUpload>  
-                    </center>
+                    <p:fieldset legend="Datos inscripcón">
+                        <p:growl id="messages" autoUpdate="true" showDetail="true"/>  
+                        <center>
+                            <p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
+                                            title="Foto Estudiante" alt="Foto Estudiante" 
+                                            id="foto" width="150" height="120"></p:graphicImage><br/>
+                            <p:fileUpload mode="advanced" dragDropSupport="false"  
+                                          fileUploadListener="#{inscripcionMB.guardarFoto}"
+                                          label="Agregar foto" auto="true"
+                                          update="foto" required="false"  uploadLabel="Subir foto"
+                                          cancelLabel="Cancelar"
+                                          allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ></p:fileUpload>  
+                        </center>
 
-                    <h:panelGrid columns="8">  
+                        <h:panelGrid columns="8">  
 
-                        <p:outputLabel for="docum_identidad" 
-                                       value="Documento de Identidad"></p:outputLabel>
-                        <p:inputText required="true" converter="#{BigInteger}"
-                                     id="docum_identidad" type="text" 
-                                     value="#{inscripcionMB.inscripcionVO.documentoIdentidad}">
-                        </p:inputText>
-                        <p:outputLabel for="fecha_exp" value="Fecha de Exp"></p:outputLabel>
-                        <p:calendar value="#{inscripcionMB.inscripcionVO.fechaExpedicionDocumento}" 
-                                    pattern="dd/MM/yyyy"  required="true"
-                                    id="fecha_exp" showOn="button" converter="#{DateTime}" >
-                        </p:calendar>
-                        <p:outputLabel for="nombres" value="Nombres"></p:outputLabel>
-                        <p:inputText id="nombres" type="text" value="" required="true" />
-                        <p:outputLabel for="apellidos" value="Apellidos"></p:outputLabel>
-                        <p:inputText id="apellidos" type="text" required="true" value="" />
-
-
-                        <p:outputLabel for="fecha_nac" value="Fecha de Nacimiento"></p:outputLabel>
-                        <p:calendar value="#{inscripcionMB.inscripcionVO.fechaNacimento}" 
-                                    pattern="dd/MM/yyyy"  required="true" 
-                                    id="fecha_nac" showOn="button" converter="#{DateTime}" >
-                        </p:calendar>
-                        <p:outputLabel for="lugar_nac" value="Lugar de Nacimiento"></p:outputLabel>
-                        <p:selectOneMenu id="lugar_nac" value="" required="true">  
-                            <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
-                            <f:selectItem itemLabel="CALI" itemValue="CALI" />  
-                            <f:selectItem itemLabel="BOGOTA" itemValue="BOGOTA" />  
-                        </p:selectOneMenu>
-                        <p:outputLabel for="seg_social" value="Seguridad Social"></p:outputLabel>
-                        <p:inputText id="seg_social" required="true" type="text" value="" />
-                        <p:outputLabel for="rh" value="Tipo de Sangre"></p:outputLabel>
-                        <p:selectOneMenu value="" id="rh" required="true">  
-                            <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
-                            <f:selectItem itemLabel="O+" itemValue="O+" />  
-                            <f:selectItem itemLabel="O-" itemValue="O-" />  
-                            <f:selectItem itemLabel="A+" itemValue="A+" />  
-                            <f:selectItem itemLabel="A-" itemValue="A-" />  
-                            <f:selectItem itemLabel="B+" itemValue="B+" />  
-                            <f:selectItem itemLabel="B-" itemValue="B-" />  
-                            <f:selectItem itemLabel="AB+" itemValue="AB+" />  
-                            <f:selectItem itemLabel="AB-" itemValue="AB-" />  
-                        </p:selectOneMenu>
+                            <p:outputLabel for="docum_identidad" 
+                                           value="Documento de Identidad"></p:outputLabel>
+                            <p:inputText required="true" converter="#{BigInteger}"
+                                         id="docum_identidad" type="text" 
+                                         value="#{inscripcionMB.inscripcionVO.documentoIdentidad}">
+                            </p:inputText>
+                            <p:outputLabel for="fecha_exp" value="Fecha de Exp"></p:outputLabel>
+                            <p:calendar value="#{inscripcionMB.inscripcionVO.fechaExpedicionDocumento}" 
+                                        pattern="dd/MM/yyyy"  required="true"
+                                        id="fecha_exp" showOn="button" converter="#{DateTime}" >
+                            </p:calendar>
+                            <p:outputLabel for="nombres" value="Nombres"></p:outputLabel>
+                            <p:inputText id="nombres" type="text" value="" required="true" />
+                            <p:outputLabel for="apellidos" value="Apellidos"></p:outputLabel>
+                            <p:inputText id="apellidos" type="text" required="true" value="" />
 
 
-                        <p:outputLabel for="dir_res" value="Dirección de Residencia"></p:outputLabel>
-                        <p:inputText id="dir_res" type="text" required="true" value="" />
-                        <p:outputLabel for="barrrio_res" value="Barrio de Residencia"></p:outputLabel>
-                        <p:inputText id="barrrio_res" type="text"  required="true" value="" />
-                        <p:outputLabel for="tel_fijo"  value="Dirección de Residencia"></p:outputLabel>
-                        <p:inputMask id="tel_fijo" required="true" value="" mask="999-99-99"/>  
-                        <p:outputLabel for="tel_movil" value="Telefono Celular"></p:outputLabel>
-                        <p:inputMask id="tel_movil" required="true" value="" mask="999-999-99-99"/>  
+                            <p:outputLabel for="fecha_nac" value="Fecha de Nacimiento"></p:outputLabel>
+                            <p:calendar value="#{inscripcionMB.inscripcionVO.fechaNacimento}" 
+                                        pattern="dd/MM/yyyy"  required="true" 
+                                        id="fecha_nac" showOn="button" converter="#{DateTime}" >
+                            </p:calendar>
+                            <p:outputLabel for="lugar_nac" value="Lugar de Nacimiento"></p:outputLabel>
+                            <p:selectOneMenu id="lugar_nac" value="" required="true">  
+                                <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
+                                <f:selectItem itemLabel="CALI" itemValue="CALI" />  
+                                <f:selectItem itemLabel="BOGOTA" itemValue="BOGOTA" />  
+                            </p:selectOneMenu>
+                            <p:outputLabel for="seg_social" value="Seguridad Social"></p:outputLabel>
+                            <p:inputText id="seg_social" required="true" type="text" value="" />
+                            <p:outputLabel for="rh" value="Tipo de Sangre"></p:outputLabel>
+                            <p:selectOneMenu value="" id="rh" required="true">  
+                                <f:selectItem noSelectionOption="true" itemLabel="Seleccione..." itemValue="" />  
+                                <f:selectItem itemLabel="O+" itemValue="O+" />  
+                                <f:selectItem itemLabel="O-" itemValue="O-" />  
+                                <f:selectItem itemLabel="A+" itemValue="A+" />  
+                                <f:selectItem itemLabel="A-" itemValue="A-" />  
+                                <f:selectItem itemLabel="B+" itemValue="B+" />  
+                                <f:selectItem itemLabel="B-" itemValue="B-" />  
+                                <f:selectItem itemLabel="AB+" itemValue="AB+" />  
+                                <f:selectItem itemLabel="AB-" itemValue="AB-" />  
+                            </p:selectOneMenu>
 
-                        <p:outputLabel for="email" value="Correo electrónico"></p:outputLabel>
-                        <p:inputText id="email" type="text" required="true" value="">
-                            <f:validateRegex
-                                pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$">
-                            </f:validateRegex>
-                        </p:inputText>
-                        <p:outputLabel for="bb_pin" value="BB PIN"></p:outputLabel>
-                        <p:inputText id="bb_pin" required="true" type="text" value="" />
-                        <p:outputLabel for="col" value="Colegio"></p:outputLabel>
-                        <p:inputText id="col" required="true" type="text" value="" />
-                        <p:outputLabel for="grado_col" value="Grado"></p:outputLabel>
-                        <p:inputText id="grado_col" required="true" type="text" value="" />
-                    </h:panelGrid>  
 
+                            <p:outputLabel for="dir_res" value="Dirección de Residencia"></p:outputLabel>
+                            <p:inputText id="dir_res" type="text" required="true" value="" />
+                            <p:outputLabel for="barrrio_res" value="Barrio de Residencia"></p:outputLabel>
+                            <p:inputText id="barrrio_res" type="text"  required="true" value="" />
+                            <p:outputLabel for="tel_fijo"  value="Dirección de Residencia"></p:outputLabel>
+                            <p:inputMask id="tel_fijo" required="true" value="" mask="999-99-99"/>  
+                            <p:outputLabel for="tel_movil" value="Telefono Celular"></p:outputLabel>
+                            <p:inputMask id="tel_movil" required="true" value="" mask="999-999-99-99"/>  
 
+                            <p:outputLabel for="email" value="Correo electrónico"></p:outputLabel>
+                            <p:inputText id="email" type="text" required="true" value="">
+                                <f:validateRegex
+                                    pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$">
+                                </f:validateRegex>
+                            </p:inputText>
+                            <p:outputLabel for="bb_pin" value="BB PIN"></p:outputLabel>
+                            <p:inputText id="bb_pin" required="true" type="text" value="" />
+                            <p:outputLabel for="col" value="Colegio"></p:outputLabel>
+                            <p:inputText id="col" required="true" type="text" value="" />
+                            <p:outputLabel for="grado_col" value="Grado"></p:outputLabel>
+                            <p:inputText id="grado_col" required="true" type="text" value="" />
+                        </h:panelGrid>  
+                    </p:fieldset>
                 </p:tab>  
+
                 <p:tab title="Datos Familiares">  
                     <p:fieldset legend="Datos Madre">
                         <h:panelGrid columns="6"> 
@@ -149,7 +150,7 @@
             </p:accordionPanel>  
             <p:commandButton value="Registrar" ajax="false" 
                              action="#{inscripcionMB.registrarInscripcion}">
-             <!--<f:ajax execute="@all" render="@form"/>-->
+                <!--<f:ajax execute="@all" render="@form"/>-->
             </p:commandButton>
         </h:form>
     </h:body>
