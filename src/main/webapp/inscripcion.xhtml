@@ -9,14 +9,17 @@
         <title>Formulario de inscripción</title>
     </h:head>
     <h:body>
+        <p:graphicImage  library="img" name="logo_champions.png">
+                            </p:graphicImage>
+        <h1 style="text-align: center; float: right">FICHA DE INSCRIPCIÓN CHAMPIONS</h1>
         <h:form enctype="multipart/form-data">
-            <h1 style="text-align: center">FORMULARIO DE INSCRIPCIÓN CHAMPIONS</h1>
+            
             <!--<p:messages autoUpdate="true" globalOnly="true"></p:messages>-->
             <p:growl showDetail="true"></p:growl>
             <p:accordionPanel multiple="true" activeIndex="">  
                 <p:tab title="Datos Generales">
                     <p:fieldset legend="Datos inscripcón">
-                        <p:growl id="messages" autoUpdate="true" showDetail="true"/>  
+                        <p:growl id="messages" autoUpdate="true" showDetail="false"/>  
                         <center>
                             <p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
                                             id="foto" width="135" height="175"></p:graphicImage><br/>
