@@ -15,7 +15,7 @@
             <p:growl showDetail="true"></p:growl>
             <p:accordionPanel multiple="true" activeIndex="">  
                 <p:tab title="Datos Generales">
-                    <p:growl id="messages" showDetail="true"/>  
+                    <p:growl id="messages" autoUpdate="true" showDetail="true"/>  
                     <center>
                         <p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
                                         title="Foto Estudiante" alt="Foto Estudiante" 
@@ -147,7 +147,10 @@
                     </p:fieldset>
                 </p:tab> 
             </p:accordionPanel>  
-            <p:commandButton value="Registrar" ajax="false"></p:commandButton>
+            <p:commandButton value="Registrar" ajax="false" 
+                             action="#{inscripcionMB.registrarInscripcion}">
+             <!--<f:ajax execute="@all" render="@form"/>-->
+            </p:commandButton>
         </h:form>
     </h:body>
 </html>

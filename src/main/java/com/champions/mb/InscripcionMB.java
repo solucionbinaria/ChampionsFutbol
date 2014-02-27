@@ -6,14 +6,14 @@
 package com.champions.mb;
 
 import com.champions.bean.InscripcionVO;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import javax.enterprise.context.RequestScoped;
+import java.io.Serializable;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import javax.servlet.ServletContext;
 import org.primefaces.event.FileUploadEvent;
@@ -23,8 +23,8 @@ import org.primefaces.event.FileUploadEvent;
  * @author hanseld
  */
 @Named
-@RequestScoped
-public class InscripcionMB {
+@ViewScoped
+public class InscripcionMB implements Serializable {
 
     private InscripcionVO inscripcionVO;
 
@@ -33,6 +33,10 @@ public class InscripcionMB {
      */
     public InscripcionMB() {
         inscripcionVO = new InscripcionVO();
+    }
+    
+    public String registrarInscripcion() {
+        return "";
     }
 
     public void guardarFoto(FileUploadEvent event) throws IOException {

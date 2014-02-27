@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.champions.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author hanseld
  */
-public class InscripcionVO {
-    
+public class InscripcionVO implements Serializable {
+
     private Long documentoIdentidad;
     private Date fechaExpedicionDocumento;
     private Date fechaNacimento;
@@ -35,7 +35,9 @@ public class InscripcionVO {
 
     /**
      *
-    /**
+     * /
+     *
+     **
      * @return the fechaNacimento
      */
     public Date getFechaNacimento() {
@@ -76,7 +78,5 @@ public class InscripcionVO {
     public void setRutaImagen(String rutaImagen) {
         this.rutaImagen = rutaImagen;
     }
-    
-    
-    
+
 }
