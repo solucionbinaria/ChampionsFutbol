@@ -9,7 +9,8 @@ and open the template in the editor.
 */
 
 body {
-    font-family: sans-serif, verdava, Arial;
+    font-family: Arial, Verdana, Helvetica, sans-seri;
+    font-style: italic;
     font-size: 12px;
 }
 
