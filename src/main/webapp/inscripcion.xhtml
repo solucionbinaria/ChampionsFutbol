@@ -16,20 +16,22 @@
 
             <!--<p:messages autoUpdate="true" globalOnly="true"></p:messages>-->
             <p:growl showDetail="true"></p:growl>
-            <p:accordionPanel multiple="true" activeIndex="">  
+            <p:accordionPanel multiple="true" activeIndex="0">  
                 <p:tab title="Datos Generales">
                     <p:fieldset legend="Datos inscripcón">
                         <p:growl id="messages" autoUpdate="true" showDetail="false"/>  
                         <table border="0">
                             <tr>
-                                <td><p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
+                                <td align="center"><p:graphicImage value="#{inscripcionMB.inscripcionVO.rutaImagen}" 
                                                     id="foto" width="135" height="175"></p:graphicImage><br/>
-                                    <p:fileUpload mode="advanced" dragDropSupport="false"  
+                                    <p:fileUpload mode="advanced" dragDropSupport="true"  
                                                   fileUploadListener="#{inscripcionMB.guardarFoto}"
                                                   label="Agregar foto" auto="true"
                                                   update="foto" required="false"  uploadLabel="Subir foto"
                                                   cancelLabel="Cancelar"
-                                                  allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ></p:fileUpload>
+                                                  allowTypes="/(\.|\/)(gif|jpe?g|png)$/" >
+                                    </p:fileUpload>
+                                    Arrastrar y soltar
                                 </td>
                                 <td valign="top">
                                     <table>
